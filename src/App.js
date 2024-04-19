@@ -7,7 +7,7 @@ import EqualButton from "./components/EqualButton";
 export default function App({ state, dispatch }) {
   return (
     <div className="App">
-      <h1>Calculadora Científica</h1>
+      <h1>Calculadora Cientfica</h1>
       <div className="calc-wrapper">
         <Input input={state}></Input>
         <div className="row">
