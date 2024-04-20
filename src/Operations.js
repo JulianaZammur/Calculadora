@@ -1,7 +1,6 @@
 import * as math from "mathjs";
 
-const operatorsArr = ['*', '/', '+', '-']
-
+const operatorsArr = ['*', '/', '+', '-','^']
 const actions = {
   handleClear() {
     console.clear();
@@ -12,6 +11,8 @@ const actions = {
     if ((state[state.length - 1] === '-' && param === '-') || (operatorsArr.includes(state[state.length - 1]) && operatorsArr.includes(param))) {
       return state;
     } else {
+      console.log(state+"stateinputNum");
+      console.log(param+"paramInputNum");
       return state + param;
     }
   },
@@ -25,14 +26,33 @@ const actions = {
   },
 
   handleEqual(state) {
+    const indexPow = state.indexOf("^");
     if (state === "") {
       return state;
     } else {
-      console.log(math.evaluate(state));
+      if(indexPow !== -1){
+        const base = state.substring(0, indexPow);
+        const exp = state.substring(indexPow + 1);
+        return this.handlePow(base,exp)
+      }
       return math.evaluate(state);
     }
   },
 
+  handlePow(base, exp) {
+    return base ** exp;
+  },
+
+  handleInvers(state) {
+    if (state === "") {
+      return state;
+    } else {
+      if (state === 0) {
+        return state;
+    }
+      return 1/state;
+    }
+  },
   handleRoot(state) {
     if (state === "") {
       return state;
@@ -41,11 +61,20 @@ const actions = {
     }
   },
 
-  handleSquare(state) {
+  handleLog(state) {
     if (state === "") {
       return state;
     } else {
-      return Math.pow(state, 2);
+      return Math.log(state);
+    }
+  },
+
+  handleBack(state) {
+    if (state === "") {
+      return state;
+    } else {
+      state = state.substring(0, state.length - 1);
+      return(state);
     }
   },
 

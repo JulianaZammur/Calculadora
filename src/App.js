@@ -54,7 +54,7 @@ export default function App({ state, dispatch }) {
           >
             X
           </Button>
-          <Button onClick={() => dispatch({ type: "handleCube" })}>x³</Button>
+          <Button onClick={() => dispatch({ type: "handleInvers" })}>1/x</Button>
         </div>
         <div className="row">
           <Button
@@ -77,7 +77,7 @@ export default function App({ state, dispatch }) {
           >
             +
           </Button>
-          <Button onClick={() => dispatch({ type: "handleSquare" })}>x²</Button>
+          <Button onClick={() => dispatch({ type: "addtoInputNum",param:"^" })}>x^n</Button>
         </div>
         <div className="row">
           <Button
@@ -100,11 +100,17 @@ export default function App({ state, dispatch }) {
           >
             -
           </Button>
-          <Button onClick={() => dispatch({ type: "handleClear" })}>C</Button>
+          <Button onClick={() => dispatch({ type: "handleLog" })}>ln⁡x</Button>
         </div>
         <div className="row">
           <EqualButton onClick={() => dispatch({ type: "handleEqual" })}>
             =
+          </EqualButton>
+          <EqualButton onClick={() => dispatch({ type: "handleClear" })}>
+            c
+          </EqualButton>
+          <EqualButton onClick={() => dispatch({ type: "handleBack" })}>
+            back
           </EqualButton>
         </div>
       </div>
