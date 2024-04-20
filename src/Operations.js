@@ -27,7 +27,7 @@ const actions = {
 
   handleEqual(state) {
     const indexPow = state.indexOf("^");
-    if (state === "") {
+    if (state === "" || operatorsArr.includes(state[state.length - 1])) {
       return state;
     } else {
       if(indexPow !== -1){
