@@ -1,5 +1,5 @@
 import React from "react";
-import "./EqualButton.css";
+import "../stylesheets/EqualButton.css";
 
 const EqualButton = (props) => {
   return (
