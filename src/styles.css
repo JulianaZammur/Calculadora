@@ -24,8 +24,9 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
     width: 100%;
+    padding-top: 10px;
+    padding-bottom: 30px;
   }
 
   .App-header {
@@ -34,7 +35,7 @@ body {
   }
   
   .calc-wrapper {
-    width: 500px;
+    width: 350px;
     height: auto;
     border-radius: 10px;
     overflow: visible;
@@ -68,7 +69,7 @@ body {
   }
 
   .Black {
-    background-image: url('./images/imagen2.png');
+    background-image: url('./images/imagen2.jpg');
   }
 
   .Iron {

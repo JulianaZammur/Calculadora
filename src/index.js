@@ -1,12 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import Parent from "./Parent";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import Parent from './Parent';
 
-const rootElement = document.getElementById("root");
-
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
-      <Parent />
-  </React.StrictMode>,
-  rootElement
+    <Parent />
+  </React.StrictMode>
 );

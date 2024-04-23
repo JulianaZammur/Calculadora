@@ -1,7 +1,7 @@
 .equal-btn {
     user-select: none;
     cursor: pointer;
-    height: 4em;
+    height: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
