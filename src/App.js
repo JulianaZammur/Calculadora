@@ -10,8 +10,14 @@ export default function App({ state, dispatch }) {
       <h1>Calculadora Cientfica</h1>
       <div className="calc-wrapper">
         <Input input={state}></Input>
+        <div className="row cientific">
+          <Button onClick={() => dispatch({ type: "handleRoot" })}>√</Button>
+          <Button onClick={() => dispatch({ type: "handleInvers" })}>1/x</Button>
+          <Button onClick={() => dispatch({ type: "addtoInputNum",param:"^" })}>x^n</Button>
+          <Button onClick={() => dispatch({ type: "handleLog" })}>ln⁡x</Button>
+        </div>
         <div className="row">
-          <Button
+        <Button
             onClick={() => dispatch({ type: "addtoInputNum", param: "7" })}
           >
             7
@@ -31,9 +37,8 @@ export default function App({ state, dispatch }) {
           >
             /
           </Button>
-          <Button onClick={() => dispatch({ type: "handleRoot" })}>√</Button>
-        </div>
-        <div className="row">
+          </div>
+          <div className="row">
           <Button
             onClick={() => dispatch({ type: "addtoInputNum", param: "4" })}
           >
@@ -54,8 +59,7 @@ export default function App({ state, dispatch }) {
           >
             X
           </Button>
-          <Button onClick={() => dispatch({ type: "handleInvers" })}>1/x</Button>
-        </div>
+          </div>
         <div className="row">
           <Button
             onClick={() => dispatch({ type: "addtoInputNum", param: "1" })}
@@ -77,7 +81,6 @@ export default function App({ state, dispatch }) {
           >
             +
           </Button>
-          <Button onClick={() => dispatch({ type: "addtoInputNum",param:"^" })}>x^n</Button>
         </div>
         <div className="row">
           <Button
@@ -100,7 +103,6 @@ export default function App({ state, dispatch }) {
           >
             -
           </Button>
-          <Button onClick={() => dispatch({ type: "handleLog" })}>ln⁡x</Button>
         </div>
         <div className="row">
           <EqualButton onClick={() => dispatch({ type: "handleEqual" })}>
