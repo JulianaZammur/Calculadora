@@ -40,6 +40,14 @@ body {
     display: flex;
     width: 100%;
   }
+
+  .basic-mode {
+    display: none;
+  }
+  
+  .cientific-mode {
+    overflow: visible;
+  }
   
   h1 {
     color: #da9c0d;
@@ -49,3 +57,4 @@ body {
   h6 {
     font-size: 12px;
   }
+  

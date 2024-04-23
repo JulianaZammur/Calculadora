@@ -1,20 +1,32 @@
-import React from "react";
+import React, { useState }from "react";
 import "./styles.css";
 import Button from "./components/Button";
 import Input from "./components/Input";
 import EqualButton from "./components/EqualButton";
+import Switch from "./components/Switch";
+import Dropdown from "./components/Dropdown";
 
 export default function App({ state, dispatch }) {
+
+  const [isSwitchOn, setIsSwitchOn] = useState(false);
+
+  const handleSwitchChange = (isChecked) => {
+    setIsSwitchOn(isChecked);
+  };
+
   return (
     <div className="App">
-      <h1>Calculadora Cientfica</h1>
+      <header className="App-header">
+        <Dropdown />
+      </header>
+      <h1>CalculadorApp</h1>
       <div className="calc-wrapper">
         <Input input={state}></Input>
-        <div className="row cientific">
+        <div className={`row ${isSwitchOn ? 'cientific-mode' : 'basic-mode'}`}>
           <Button onClick={() => dispatch({ type: "handleRoot" })}>√</Button>
           <Button onClick={() => dispatch({ type: "handleInvers" })}>1/x</Button>
           <Button onClick={() => dispatch({ type: "addtoInputNum",param:"^" })}>x^n</Button>
-          <Button onClick={() => dispatch({ type: "handleLog" })}>ln⁡x</Button>
+          <Button onClick={() => dispatch({ type: "handleLog" })}>ln⁡x</Button> 
         </div>
         <div className="row">
         <Button
@@ -119,6 +131,8 @@ export default function App({ state, dispatch }) {
           </EqualButton>
         </div>
       </div>
-    </div>
+    <Switch onChange={handleSwitchChange} />
+  </div>
   );
 }
+
