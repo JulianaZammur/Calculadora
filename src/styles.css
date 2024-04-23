@@ -56,10 +56,10 @@ body {
   }
   
   h1 {
-    color:#bc240c;
+    color:#fcf7f6;
     font-size: 35px;
     font-weight: 800;
-    -webkit-text-stroke: 0.5px rgb(253, 246, 246);
+    -webkit-text-stroke: 1px rgb(16, 16, 16);
     
   }
   
