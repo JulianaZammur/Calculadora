@@ -57,4 +57,19 @@ body {
   h6 {
     font-size: 12px;
   }
-  
+
+  .Silver {
+    background-image: url('./images/imagen1.jpg');
+  }
+
+  .Black {
+    background-image: url('./images/imagen2.png');
+  }
+
+  .Iron {
+    background-image: url('./images/imagen3.jpg');
+  }
+
+  .Pink {
+    background-image: url('./images/imagen4.jpg');
+  }

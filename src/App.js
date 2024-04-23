@@ -8,16 +8,21 @@ import Dropdown from "./components/Dropdown";
 
 export default function App({ state, dispatch }) {
 
+  const [selectedTheme, setSelectedTheme] = useState(null);
   const [isSwitchOn, setIsSwitchOn] = useState(false);
 
   const handleSwitchChange = (isChecked) => {
     setIsSwitchOn(isChecked);
   };
 
+  const handleSelectTheme = (theme) => {
+    setSelectedTheme(theme);
+  };
+
   return (
-    <div className="App">
+    <div className={`App ${selectedTheme}`}>
       <header className="App-header">
-        <Dropdown />
+        <Dropdown onSelect={handleSelectTheme} />
       </header>
       <h1>CalculadorApp</h1>
       <div className="calc-wrapper">

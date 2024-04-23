@@ -1,34 +1,25 @@
 import React, { useState } from 'react';
 import '../stylesheets/Dropdown.css';
 
-function Dropdown() {
-  const [isOpen, setIsOpen] = useState(false);
+function Dropdown({ onSelect }) {
   const [selectedOption, setSelectedOption] = useState(null);
-  const options = ['Opción 1', 'Opción 2', 'Opción 3', 'Option 4'];
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+  const options = ['Silver', 'Black', 'Iron', 'Pink'];
 
   const selectOption = (option) => {
     setSelectedOption(option);
-    setIsOpen(false);
+    onSelect(option);
   };
 
   return (
     <div className="dropdown-container">
-      <button onClick={toggleDropdown} className="dropdown-button">
-        {selectedOption || 'Select an option'}
-      </button>
-      {isOpen && (
-        <ul className="dropdown-list">
-          {options.map((option, index) => (
-            <li key={index} onClick={() => selectOption(option)}>
-              {option}
-            </li>
-          ))}
-        </ul>
-      )}
+      <select onChange={(e) => selectOption(e.target.value)} value={selectedOption}>
+        <option value="">Seleccionar Tema</option>
+        {options.map((option, index) => (
+          <option key={index} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }

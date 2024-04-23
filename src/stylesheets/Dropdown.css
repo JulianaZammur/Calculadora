@@ -1,31 +1,8 @@
 .dropdown-container {
-    position: relative;
-  }
-  
-  .dropdown-button {
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .dropdown-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-    border: 1px solid #ccc;
-    border-top: none;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .dropdown-list li {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #fff;
-  }
-  
-  .dropdown-list li:hover {
-    background-color: #f1f1f1;
-  }
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 10px;
+  font-size: 16px;
+}
