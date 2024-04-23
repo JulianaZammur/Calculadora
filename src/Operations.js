@@ -1,6 +1,7 @@
 import * as math from "mathjs";
 
-const operatorsArr = ['*', '/', '+', '-','^']
+const operatorsArr = ['*', '/', '+', '-','^','&']
+var ansNumber = 0;
 const actions = {
   handleClear() {
     console.clear();
@@ -33,13 +34,16 @@ const actions = {
       if(indexPow !== -1){
         const base = state.substring(0, indexPow);
         const exp = state.substring(indexPow + 1);
-        return this.handlePow(base,exp)
+        ansNumber = this.handlePow(base,exp);
+        return this.handlePow(base,exp);
       }
+      ansNumber = math.evaluate(state);
       return math.evaluate(state);
     }
   },
 
   handlePow(base, exp) {
+    ansNumber = base ** exp;
     return base ** exp;
   },
 
@@ -50,6 +54,7 @@ const actions = {
       if (state === 0) {
         return state;
     }
+      ansNumber = 1/state;
       return 1/state;
     }
   },
@@ -57,6 +62,7 @@ const actions = {
     if (state === "") {
       return state;
     } else {
+      ansNumber = Math.sqrt(state);
       return Math.sqrt(state);
     }
   },
@@ -65,6 +71,7 @@ const actions = {
     if (state === "") {
       return state;
     } else {
+      ansNumber = Math.log(state);
       return Math.log(state);
     }
   },
@@ -77,12 +84,11 @@ const actions = {
       return(state);
     }
   },
-
-  handleCube(state) {
+  handleAns(state) {
     if (state === "") {
-      return state;
+      return ansNumber;
     } else {
-      return Math.pow(state, 3);
+      return state + ansNumber;
     }
   },
 

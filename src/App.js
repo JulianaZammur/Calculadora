@@ -112,6 +112,9 @@ export default function App({ state, dispatch }) {
           <EqualButton onClick={() => dispatch({ type: "handleBack" })}>
             back
           </EqualButton>
+          <EqualButton onClick={() => dispatch({ type: "handleAns", param: "&" })}>
+            ans
+          </EqualButton>
         </div>
       </div>
     </div>
