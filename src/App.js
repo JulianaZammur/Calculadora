@@ -1,4 +1,4 @@
-import React, { useState }from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import Button from "./components/Button";
 import Input from "./components/Input";
@@ -21,20 +21,21 @@ export default function App({ state, dispatch }) {
 
   return (
     <div className={`App ${selectedTheme}`}>
+      <h1>CalculadorApp</h1>
       <header className="App-header">
+        <Switch onChange={handleSwitchChange} />
         <Dropdown onSelect={handleSelectTheme} />
       </header>
-      <h1>CalculadorApp</h1>
       <div className="calc-wrapper">
         <Input input={state}></Input>
         <div className={`row ${isSwitchOn ? 'cientific-mode' : 'basic-mode'}`}>
           <Button onClick={() => dispatch({ type: "handleRoot" })}>√</Button>
           <Button onClick={() => dispatch({ type: "handleInvers" })}>1/x</Button>
-          <Button onClick={() => dispatch({ type: "addtoInputNum",param:"^" })}>x^n</Button>
-          <Button onClick={() => dispatch({ type: "handleLog" })}>ln⁡x</Button> 
+          <Button onClick={() => dispatch({ type: "addtoInputNum", param: "^" })}>x^n</Button>
+          <Button onClick={() => dispatch({ type: "handleLog" })}>ln⁡x</Button>
         </div>
         <div className="row">
-        <Button
+          <Button
             onClick={() => dispatch({ type: "addtoInputNum", param: "7" })}
           >
             7
@@ -54,8 +55,8 @@ export default function App({ state, dispatch }) {
           >
             /
           </Button>
-          </div>
-          <div className="row">
+        </div>
+        <div className="row">
           <Button
             onClick={() => dispatch({ type: "addtoInputNum", param: "4" })}
           >
@@ -76,7 +77,7 @@ export default function App({ state, dispatch }) {
           >
             X
           </Button>
-          </div>
+        </div>
         <div className="row">
           <Button
             onClick={() => dispatch({ type: "addtoInputNum", param: "1" })}
@@ -136,8 +137,7 @@ export default function App({ state, dispatch }) {
           </EqualButton>
         </div>
       </div>
-    <Switch onChange={handleSwitchChange} />
-  </div>
+    </div>
   );
 }
 

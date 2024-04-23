@@ -12,6 +12,7 @@ function Switch({ onChange }) {
   return (
     <div className="toggle-switch" onClick={handleToggle}>
       <div className={`switch ${isChecked ? 'on' : 'off'}`}></div>
+        Modo Cientifico
     </div>
   );
 }
